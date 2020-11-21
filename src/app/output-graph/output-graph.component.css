@@ -1,5 +1,20 @@
-#main-head {
+#container {
+  border: 1px solid black;
+}
+.component-container {
   text-align: left;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+input {
+  width: 500px;
+}
+.urls {
+  margin-top: 15px;
+}
+select {
+  width: 100px;
 }
 
 .loader-container {
@@ -160,4 +175,15 @@
     box-shadow: 0 -2em #fff;
     height: 5em;
   }
+}
+
+.links {
+  background-color: #c9f0c9;
+  width: 445px;
+  padding: 15px;
+  height: 223px;
+}
+
+.links ul li {
+  text-align: left;
 }

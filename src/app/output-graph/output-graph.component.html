@@ -1,0 +1,58 @@
+<div class="loader-container" [hidden]="!isHidden">
+  <div class="loaderBackdrop"></div>
+  <div class="sk-wave">
+    <div class="sk-rect sk-rect1"></div>
+    <div class="sk-rect sk-rect2"></div>
+    <div class="sk-rect sk-rect3"></div>
+    <div class="sk-rect sk-rect4"></div>
+    <div class="sk-rect sk-rect5"></div>
+  </div>
+</div>
+
+<div id="container"></div>
+
+<div class="component-container">
+  <label>ADD URL</label>
+  <br /><br />
+  <input [(ngModel)]="newURL" (keyup.enter)="addURL(newURL)" />
+  <br /><br />
+  <button (click)="addURL(newURL)">ADD</button>
+  <br />
+  <div class="urls">
+    <div *ngFor="let url of urls">{{ url }}</div>
+  </div>
+</div>
+
+<div class="component-container">
+  <label>Y-AXIS</label>
+  <br /><br />
+  <select [(ngModel)]="yAxisSelect">
+    <option *ngFor="let build of builds; let i = index" [value]="builds[i].id">
+      {{ builds[i].name }}
+    </option>
+  </select>
+</div>
+
+<div class="component-container">
+  <label>ACTIONS</label>
+  <br /><br />
+  <button (click)="buildGraph()">BUILD GRAPH</button>
+  <br /><br />
+  <button (click)="clearGraph()">CLEAR CHART</button>
+  <br /><br />
+  <button (click)="clearData()">CLEAR DATA</button>
+</div>
+
+<div class="links">
+  <h3>Sample links (Copy and paste to see data)</h3>
+  <ul>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json</li>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/IBM.json</li>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/C.json</li>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/AXP.json</li>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/CVS.json</li>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/GE.json</li>
+    <li>https://www.quandl.com/api/v3/datasets/WIKI/MSFT.json</li>
+  </ul>
+</div>
+
